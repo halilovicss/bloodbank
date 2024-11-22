@@ -21,7 +21,7 @@ object RetrofitModule {
         @AuthorizedOkHttpClient okHttpClient: OkHttpClient
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://dummyjson.com")
+            .baseUrl("http://192.168.1.14:3000")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

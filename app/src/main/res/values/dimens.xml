@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margine -->
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_extra">28dp</dimen>
+    <dimen name="margin_extra_large">32dp</dimen>
+    <dimen name="margin_xxl">64dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <!-- Tekst -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+
+    <!-- Ostalo -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="image_size">64dp</dimen>
+    <dimen name="button_radius">8dp</dimen>
+</resources>
