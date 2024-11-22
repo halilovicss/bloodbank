@@ -6,11 +6,7 @@ import com.online.template.core.presentation.activity.CoreFragment
 import com.online.template.core.presentation.activity.assistedViewModel
 import com.online.template.databinding.FragmentRegistrationBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import javax.inject.Inject
 
 @AndroidEntryPoint

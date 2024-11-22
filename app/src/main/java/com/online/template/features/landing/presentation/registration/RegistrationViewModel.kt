@@ -5,10 +5,7 @@ import com.online.template.core.presentation.activity.CoreViewModel
 import com.online.template.features.landing.data.remote.models.RegistrationRequestModel
 import com.online.template.features.landing.domain.use_case.RegisterUserUseCase
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
 
 class RegistrationViewModel @AssistedInject constructor(
     private val registerUserUseCase: RegisterUserUseCase
