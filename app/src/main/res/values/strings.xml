@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Template</string>
     <string name="donate_blood">Doniraj Krv</string>
+    <string name="tvoja_donacija_krvi_moze_spasiti_i_do_tri_zivota_napravi_promjenu">Tvoja donacija krvi moze spasiti i do tri zivota, napravi promjenu</string>
+    <string name="prijavi_se">Prijavi se</string>
+    <string name="registracija">Registracija</string>
+    <string name="prijavi_se_u_sistem">Prijavi se u sistem</string>
+    <string name="napravi_racun">Napravi racun</string>
+    <string name="upisi_ime_i_prezime">Upisi ime i prezime</string>
+    <string name="ime_i_prezime">Ime i Prezime</string>
+    <string name="kreiraj_racun_kako_bi_mogao_donirati_ili_slati_zahtjev_za_donaciju">Kreiraj racun kako bi mogao donirati ili slati zahtjev za donaciju</string>
+    <string name="email">Email</string>
+    <string name="naziv_mail_com">naziv@mail.com</string>
+    <string name="sifra">Sifra</string>
+    <string name="password_hint">*********</string>
+    <string name="potvrdi_sifru">Potvrdi sifru</string>
+    <string name="registruj_se">Registruj se</string>
 </resources>

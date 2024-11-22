@@ -1,16 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    style="@style/Registration"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data>
+
+        <variable
+            name="data"
+            type="com.online.template.features.landing.presentation.registration.RegistrationViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Registration"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registration Graph"
-        android:gravity="center"
-        style="@style/Heading1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textViewCreateAccount"
+            style="@style/Heading2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:gravity="center"
+            android:text="@string/napravi_racun"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/textViewRegisterSubtitle"
+            style="@style/Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_extra"
+            android:gravity="center"
+            android:text="@string/kreiraj_racun_kako_bi_mogao_donirati_ili_slati_zahtjev_za_donaciju"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCreateAccount" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_extra"
+            android:text="@string/ime_i_prezime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRegisterSubtitle" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/upisi_ime_i_prezime"
+            android:imeOptions="actionNext"
+            android:text="@={data.name}"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRegisterSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_extra"
+            android:text="@string/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/naziv_mail_com"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:text="@={data.email}"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRegisterSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_extra"
+            android:text="@string/sifra"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/password_hint"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:text="@={data.password}"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRegisterSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
+
+        <TextView
+            android:id="@+id/textViewConfirmPassword"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_extra"
+            android:text="@string/potvrdi_sifru"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="@string/password_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRegisterSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewConfirmPassword" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:backgroundTint="@color/primary_color"
+            android:onClick="@{() -> data.registerUser()}"
+            android:padding="@dimen/padding_large"
+            android:text="@string/registruj_se"
+            app:layout_constraintEnd_toEndOf="@+id/editTextConfirmPassword"
+            app:layout_constraintStart_toStartOf="@+id/editTextConfirmPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+        <TextView
+            android:id="@+id/textViewHaveAccount"
+            style="@style/Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_xsmall"
+            android:gravity="center"
+            android:text="Imate korisnicki racun. Prijavite se"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{data.progressBar ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/textViewHaveAccount"
+            app:layout_constraintEnd_toEndOf="@+id/buttonRegister"
+            app:layout_constraintStart_toStartOf="@+id/buttonRegister"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
