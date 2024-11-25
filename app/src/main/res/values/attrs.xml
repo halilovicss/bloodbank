@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BloodGroup">
+        <attr name="imageDrawable" format="reference" />
+        <attr name="bloodGroupText" format="string" />
+    </declare-styleable>
+</resources>

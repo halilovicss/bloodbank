@@ -15,4 +15,8 @@
     <string name="password_hint">*********</string>
     <string name="potvrdi_sifru">Potvrdi sifru</string>
     <string name="registruj_se">Registruj se</string>
+    <string name="home">Pocetna</string>
+    <string name="donori">Donori</string>
+    <string name="zahtjev">Zahtjev</string>
+    <string name="profil">Profil</string>
 </resources>
