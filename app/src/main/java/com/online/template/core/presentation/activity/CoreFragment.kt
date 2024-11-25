@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.online.template.helpers.navigation.NavigationCommand
+import com.online.template.helpers.view.navigate
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -30,7 +33,15 @@ abstract class CoreFragment<VB : ViewBinding, VM : CoreViewModel>(private val in
 
     protected open fun setupUI() = Unit
 
-    protected open fun setObservers() = Unit
+    protected open fun setObservers() {
+        viewModel.navigationCommands.observe(viewLifecycleOwner) {
+            when (it) {
+                is NavigationCommand.To -> navigate(it.directions)
+                is NavigationCommand.Back -> findNavController().navigateUp()
+                else -> {}
+            }
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="InitialsView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="firstName" format="string" />
+        <attr name="lastName" format="string" />
+        <attr name="url" format="string" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/main_graph"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/donor_graph"
+        android:checkable="false"
+        android:icon="@drawable/ic_persons"
+        android:title="@string/donori" />
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+    <item
+        android:id="@+id/need_graph"
+        android:checkable="false"
+        android:icon="@drawable/ic_blood_add"
+        android:title="@string/zahtjev" />
+    <item
+        android:id="@+id/profile_graph"
+        android:checkable="false"
+        android:icon="@drawable/ic_person"
+        android:title="@string/profil" />
+</menu>

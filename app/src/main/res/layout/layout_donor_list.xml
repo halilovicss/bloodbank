@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.online.template.features.dashboard.domain.entities.DashboardEntity.BloodDonorList" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> data.dashboardListener.openPerson(data.id)}"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@drawable/button_background"
+        android:padding="@dimen/margin_small">
+
+        <com.online.template.helpers.view.CircleImageView
+            android:id="@+id/circleImageProfileDonorList"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/img_profile"
+            app:url="@{data.profileImage}" />
+
+        <TextView
+            android:id="@+id/textViewNameDonor"
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_toEndOf="@id/circleImageProfileDonorList"
+            android:text="@{data.name}"
+            tools:text="Haliovic Selvedin" />
+
+        <TextView
+            android:id="@+id/textViewAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewNameDonor"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_toEndOf="@id/circleImageProfileDonorList"
+            android:drawableStart="@drawable/ic_location"
+            android:text="@{data.address}"
+            tools:text="Kovaci Zavidovici" />
+
+        <TextView
+            android:id="@+id/textViewDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/button_background"
+            android:backgroundTint="@color/quantum_grey"
+            android:padding="4dp"
+            android:text="@{data.distance}"
+            tools:text="3432km" />
+    </RelativeLayout>
+</layout>

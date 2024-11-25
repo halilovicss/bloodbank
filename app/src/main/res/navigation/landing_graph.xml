@@ -14,5 +14,9 @@
         android:id="@+id/landingMainFragment"
         android:name="com.online.template.features.landing.presentation.main.LandingMainFragment"
         android:label="LandingMainFragment"
-        tools:layout="@layout/fragment_landing_main" />
+        tools:layout="@layout/fragment_landing_main" >
+        <action
+            android:id="@+id/action_landingMainFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
 </navigation>

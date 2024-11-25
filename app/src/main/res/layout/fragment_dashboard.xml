@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.online.template.features.dashboard.presentation.DashboardViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_medium"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_top_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.online.template.helpers.view.CircleImageView
+            android:id="@+id/imageProfileDashboard"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/img_profile"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:url="@{data.profileImage}" />
+
+        <TextView
+            android:id="@+id/textViewFullNameDashboard"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xsmall"
+            android:backgroundTint="@android:color/transparent"
+            android:text="@{data.fullName}"
+            android:textColor="@color/background_color"
+            app:layout_constraintStart_toEndOf="@+id/imageProfileDashboard"
+            app:layout_constraintTop_toTopOf="@+id/imageProfileDashboard"
+            tools:text="Halilovic Selvedin" />
+
+        <TextView
+            android:id="@+id/textViewUserIdDahsboard"
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:text="@{data.userId}"
+            android:textColor="@color/background_color"
+            app:layout_constraintStart_toStartOf="@+id/textViewFullNameDashboard"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFullNameDashboard"
+            tools:text="User ID: 3423" />
+
+        <ImageView
+            android:id="@+id/iconChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="@dimen/margin_small"
+            android:src="@drawable/ic_chat"
+            app:layout_constraintBottom_toBottomOf="@+id/iconNotification"
+            app:layout_constraintEnd_toStartOf="@+id/iconNotification"
+            app:layout_constraintTop_toTopOf="@+id/textViewFullNameDashboard" />
+
+        <ImageView
+            android:id="@+id/iconNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="@dimen/margin_small"
+            android:src="@{data.notificationStatus ? @drawable/ic_notification_active : @drawable/ic_notification_standard}"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/textViewFullNameDashboard"
+            tools:src="@drawable/ic_notification_standard" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewInformation"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:elevation="6dp"
+            android:padding="@dimen/padding_small"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/imageProfileDashboard">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCardInformation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewInfoTitle"
+                    style="@style/Paragraph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_small"
+                    android:text="Ponovo mozes donirati za 45 dana" />
+
+                <TextView
+                    android:id="@+id/textViewInfoDonationTime"
+                    style="@style/Paragraph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewInfoTitle"
+                    android:padding="@dimen/padding_small"
+                    android:text="Ukupno si donirao 17 puta" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarDonationTime"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewInfoDonationTime"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_toStartOf="@id/imgCardViewDonation"
+                    android:progress="40"
+                    android:progressBackgroundTint="@color/primary_color"
+                    android:progressTint="#FB0000" />
+
+                <ImageView
+                    android:id="@+id/imgCardViewDonation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:src="@drawable/img_donation" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:spanCount="3" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewLinear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_small"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewDashboard" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

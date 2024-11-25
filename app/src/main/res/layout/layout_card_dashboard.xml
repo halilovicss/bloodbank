@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.online.template.features.dashboard.domain.entities.DashboardMenuEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewInformation"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="@dimen/margin_xsmall"
+        android:padding="@dimen/padding_small"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2sp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/margin_small"
+                android:src="@drawable/ic_person_search" />
+
+            <TextView
+                android:id="@+id/textViewCard"
+                style="@style/Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/padding_small"
+                android:text="@{data.title}" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
